@@ -1,4 +1,6 @@
-303.1.1 - [Introduction to Java](https://docs.google.com/presentation/d/1-yqtICzQFgAUF7C15LRqZXPXQRXwtCYKsqJKpoNURX8/edit#slide=id.p1){:target="_blank"}
+
+303.1.1 - <a href="https://docs.google.com/presentation/d/1-yqtICzQFgAUF7C15LRqZXPXQRXwtCYKsqJKpoNURX8/edit#slide=id.p1" target="_blank">Introduction to Java</a>
+
 
 303.1.2 - [Programming Fudimentals](https://docs.google.com/presentation/d/1d62NuN1u8oJoIum8CewmlKy7061wJDBSlA8qdHlmSng){:target="_blank"}
 
