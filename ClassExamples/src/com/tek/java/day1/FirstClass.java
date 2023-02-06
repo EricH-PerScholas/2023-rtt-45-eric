@@ -1,4 +1,4 @@
-package com.tek.example1;
+package com.tek.java.day1;
 
 public class FirstClass {
 

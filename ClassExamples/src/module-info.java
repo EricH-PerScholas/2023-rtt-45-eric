@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author eric
- *
- */
-module ClassExamples {
-}
