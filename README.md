@@ -5,3 +5,7 @@
 303.1.2 - [Programming Fudimentals](https://docs.google.com/presentation/d/1d62NuN1u8oJoIum8CewmlKy7061wJDBSlA8qdHlmSng)
 
 
+303.2.1 - [Java  Wrapper class, Math, Character and String Class](https://docs.google.com/presentation/d/1_3ghFB2rUjZXsVxIJx4ECZHpO2elcWW-tXMiNoya7sc)
+
+
+303.2.2 - [Conditional Statements](https://docs.google.com/presentation/d/1_X4noTyrLTz-U2E8j6H3hQMtVJ7qggBjlrq_-gV8pY8)
