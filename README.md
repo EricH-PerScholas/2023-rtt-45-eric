@@ -9,3 +9,9 @@
 
 
 303.2.2 - [Conditional Statements](https://docs.google.com/presentation/d/1_X4noTyrLTz-U2E8j6H3hQMtVJ7qggBjlrq_-gV8pY8)
+
+
+303.2.3 [Iteration Statements (Loops)](https://docs.google.com/presentation/d/14L1k0FfGw_yfzh4x57S4TwJCvw9mfDdnDuDPEMGvFrg)
+
+
+302.2.3 [Java Arrays](https://docs.google.com/presentation/d/1GYLOUMh7MbmR8tiEkBTHLIf-0kr7JtTnmbFzaPOK0IQ)
