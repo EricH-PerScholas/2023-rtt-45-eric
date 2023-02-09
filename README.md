@@ -17,7 +17,7 @@
 302.2.3 - Wednesday 2/8/23 - [Java Arrays](https://docs.google.com/presentation/d/1GYLOUMh7MbmR8tiEkBTHLIf-0kr7JtTnmbFzaPOK0IQ)
 
 
-302.2.4 - Thursday 2/9/23 - [Array Processing and Manipulation](https://docs.google.com/presentation/d/14L1k0FfGw_yfzh4x57S4TwJCvw9mfDdnDuDPEMGvFrg)
+302.2.4 - Thursday 2/9/23 - [Array Processing and Manipulation](https://docs.google.com/presentation/d/1NceUXlH2071QHOfdyaYtBWwrC0DrBpB1TS7dwuQifbo)
 
 
-302.2.4 - Thursday 2/9/23 - [Java - Classes, Methods, Constructors, Objects, Access Modifiers, and Overloading](https://docs.google.com/presentation/d/1GYLOUMh7MbmR8tiEkBTHLIf-0kr7JtTnmbFzaPOK0IQ)
+302.2.4 - Thursday 2/9/23 - [Java - Classes, Methods, Constructors, Objects, Access Modifiers, and Overloading](https://docs.google.com/presentation/d/1z3DWrJF71TguiPtrNctvKw4B2ab5LgRE2GjsbXtkzOY/edit#slide=id.p1)
