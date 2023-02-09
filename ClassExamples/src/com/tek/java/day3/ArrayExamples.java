@@ -7,7 +7,15 @@ public class ArrayExamples {
 
 	public static void main(String[] args) {
 		ArrayExamples ae = new ArrayExamples();
-		ae.createArray();
+		//ae.createArray();
+		ae.maxRandomValue(1, 10, 10);
+	}
+
+	// excercise .. make this take 3 paramter inputs
+	// the min random value, the max random value, and the number of elements in the
+	// list ... we pass maxRandomValue(1,100,10)
+	public void maxRandomValue(int smallest, int largest, int length) {
+
 	}
 
 	public void createArray() {
@@ -42,20 +50,20 @@ public class ArrayExamples {
 
 		// creating an array with constants
 		int[] constants = { 1, 5, 7, 9, 10 };
-		String[] fileExt = { ".jpg", ".txt" , ".exe" };
-		
+		String[] fileExt = { ".jpg", ".txt", ".exe" };
+
 		// first we look at old for loop on array
-		for ( int pos = 0 ; pos < strings.length ; pos++ ) {
+		for (int pos = 0; pos < strings.length; pos++) {
 			System.out.println("Position " + pos + " = " + strings[pos]);
 		}
-		
+
 		System.out.println("=================================");
-		
+
 		// we can also do a new for loop on array
-		for ( String s : strings ) {
+		for (String s : strings) {
 			System.out.println(s);
 		}
-		
+
 		// the length of the array can be defined as a variable
 		int len = 10;
 		int[] lenArray = new int[len];

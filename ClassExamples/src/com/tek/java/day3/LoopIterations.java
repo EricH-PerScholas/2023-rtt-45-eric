@@ -8,7 +8,7 @@ public class LoopIterations {
 
 	public static void main(String[] args) {
 		LoopIterations li = new LoopIterations();
-		// li.forLoop();
+		li.forLoop();
 		// li.forLoopList();
 		// li.forListExercise(5, 8);
 		// li.whileLoop(5, 10);
