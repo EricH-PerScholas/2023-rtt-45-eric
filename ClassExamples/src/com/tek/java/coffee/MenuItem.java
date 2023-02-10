@@ -19,7 +19,7 @@ public class MenuItem {
 
 	}
 
-	// this constructor takes in 2 parameters that will populate the member
+	// this constructor takes in parameters that will populate the member
 	// variables.  This consturctor needs to be able to tell the difference
 	// between the arguement passed and the member variable of the class itself
 	// by using this. it specifies the member variable of the class.

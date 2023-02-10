@@ -20,4 +20,7 @@
 302.2.4 - Thursday 2/9/23 - [Array Processing and Manipulation](https://docs.google.com/presentation/d/1NceUXlH2071QHOfdyaYtBWwrC0DrBpB1TS7dwuQifbo)
 
 
-302.2.4 - Thursday 2/9/23 - [Java - Classes, Methods, Constructors, Objects, Access Modifiers, and Overloading](https://docs.google.com/presentation/d/1z3DWrJF71TguiPtrNctvKw4B2ab5LgRE2GjsbXtkzOY/edit#slide=id.p1)
+302.2.4 - Thursday 2/9/23 - [Java - Classes, Methods, Constructors, Objects, Access Modifiers, and Overloading](https://docs.google.com/presentation/d/1z3DWrJF71TguiPtrNctvKw4B2ab5LgRE2GjsbXtkzOY/edit#slide=id.p1)'
+
+
+303.5.2 - Friday 2/10/23 - [Java - Encapsulation, Inheritance](https://docs.google.com/presentation/d/1iKcDc1KUjaXhq8ttYo0RZZ7srtX5XoC9qrbZylFhRIQ)

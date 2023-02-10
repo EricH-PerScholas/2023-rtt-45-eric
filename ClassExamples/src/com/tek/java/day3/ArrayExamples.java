@@ -1,6 +1,7 @@
 package com.tek.java.day3;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class ArrayExamples {
@@ -9,7 +10,32 @@ public class ArrayExamples {
 		ArrayExamples ae = new ArrayExamples();
 		//ae.createArray();
 		ae.maxRandomValue(1, 10, 10);
+		ae.deleteElement();
 	}
+	
+	
+	public void deleteElement() {
+		int[] arr = new int[10];
+		
+		// first we fill our array
+		for ( int i = 0 ; i < arr.length ; i++ ) {
+			arr[i] = i;
+		}
+		System.out.println("Array fileld\t\t" + Arrays.toString(arr));
+		
+		// delete element 2
+		arr[2] = 0;
+		System.out.println("Position 2 set to 0\t" + Arrays.toString(arr));
+		for ( int i = 3 ; i < arr.length ; i++ ) {
+			arr[i-1] = arr[i];
+		}
+		
+		System.out.println("Array shifte\t\t" + Arrays.toString(arr));
+		arr[arr.length-1] = 0;
+		
+		System.out.println("Final position 0\t" + Arrays.toString(arr));
+	}
+	
 
 	// excercise .. make this take 3 paramter inputs
 	// the min random value, the max random value, and the number of elements in the

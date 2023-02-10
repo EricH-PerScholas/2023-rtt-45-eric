@@ -11,8 +11,6 @@ public class CoffeeShop {
 	// class
 	private List<MenuItem> menuItems = new ArrayList<>();
 	
-	public void initialize(int count) { 
-	}
 
 	public void initialize() {
 		// all 4 of these menuItems are doing the same thing with different ways of
