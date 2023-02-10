@@ -3,14 +3,24 @@ package com.tek.java.coffee;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class CoffeeShop {
+
+	public static final int PRINT_MENU = 1;
+	public static final int ORDER_ITEM = 2;
+	public static final int VIEW_CART = 3;
+	public static final int EXIT = 4;
 
 	// this is also a member variable that is private to this class
 	// this private member variable can only be accessed from inside the coffee shop
 	// class
 	private List<MenuItem> menuItems = new ArrayList<>();
-	
+
+	private List<MenuItem> cart = new ArrayList<>();
+
+	// all member variables are define at the top of the file
+	private Scanner scanner = new Scanner(System.in);
 
 	public void initialize() {
 		// all 4 of these menuItems are doing the same thing with different ways of
@@ -36,15 +46,101 @@ public class CoffeeShop {
 	}
 
 	public void printMenuItems() {
-		
+
 		System.out.println("Item Name\tPrice\tQuantity In Stock");
 		System.out.println("---------\t-----\t-----------------");
 
 		for (MenuItem item : menuItems) {
-			DecimalFormat df = new DecimalFormat("$###.00");
-			String formattedPrice = df.format(item.getPrice());
-			System.out.println(item.getName() + "\t" + formattedPrice + "\t" + item.getQuantityInStock());	
+			System.out.println(item.getName() + "\t" + formatPrice(item.getPrice()) + "\t" + item.getQuantityInStock());
 		}
-		
+
+		System.out.println("---------\t-----\t-----------------\n");
+	}
+
+	public int menuPrompt() {
+
+		System.out.println("Welcome to Eric's coffee shop\n");
+		System.out.println(PRINT_MENU + ") Print Menu");
+		System.out.println(ORDER_ITEM + ") Order Item");
+		System.out.println(VIEW_CART + ") View Cart");
+		System.out.println(EXIT + ") Exit Coffee Shop");
+		System.out.print("\nMake selection : ");
+
+		int selection = scanner.nextInt();
+		scanner.nextLine();
+
+		System.out.println("");
+
+		return selection;
+	}
+
+	public void orderItem() {
+		printMenuItems();
+
+		System.out.print("Enter item name: ");
+		String itemName = scanner.nextLine();
+
+		MenuItem selectedItem = findMenuItemByItemName(itemName);
+		if (selectedItem != null) {
+			System.out.println(selectedItem.getName() + " added to your cart.\n");
+			cart.add(selectedItem);
+		} else {
+			System.out.println(itemName + " is not a valid selection.\n");
+		}
+	}
+
+	// this function combines 2 activities - checking if the itemName exists and
+	// returning the menuItem if the itemName does exist.
+	// in this function the arg itemName represents the user input
+	// this is a very common pattern in software engineering - every day used
+	// if the method returns null then the itemName was not found : false = null
+	// if the method returns a MenuItem the the itemName was found.
+	private MenuItem findMenuItemByItemName(String itemName) {
+		// if the incoming itemName string is not instanciated (null)
+		// the it can never be equal to a menu item.
+		if (itemName == null) {
+			return null;
+		}
+
+		// we want to trim any white space before or after the user input
+		itemName = itemName.trim();
+
+		for (MenuItem menuItem : menuItems) {
+			// the menuItem.getName function returns a string
+			String name = menuItem.getName();
+			// the string object contains a method called equalsIgnoreCase
+			if (name.equalsIgnoreCase(itemName)) {
+				return menuItem;
+			}
+		}
+
+		// we got here without match so we know we did not find
+		// the itemName in the list of menuItems
+		return null;
+	}
+
+	public void viewCart() {
+		System.out.println(cart.size() + " items in your cart:\n");
+
+		double totalPrice = 0.0;
+
+		System.out.println("Item Name\tPrice");
+		System.out.println("---------\t-----");
+		for (MenuItem item : cart) {
+			System.out.println(item.getName() + "\t" + formatPrice(item.getPrice()));
+			totalPrice = totalPrice + item.getPrice();
+		}
+
+		System.out.println("---------\t-----");
+
+		System.out.println("Total Price\t" + formatPrice(totalPrice));
+		System.out.println("");
+	}
+
+	private String formatPrice(double price) {
+		DecimalFormat df = new DecimalFormat("$###.00");
+		String formattedPrice = df.format(price);
+
+		return formattedPrice;
 	}
 }
