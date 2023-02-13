@@ -27,12 +27,18 @@ public class ImplementsMain {
 		t1.setShapeName("Triangle 1");
 		t1.setBase(7);
 		t1.setHeight(4);
+		
+		Circle c = new Circle();
+		c.setShapeName("Circle");
+		c.setRadius(5);
 
 		List<Shape> shapes = new ArrayList<>();
 		shapes.add(s1);
 		shapes.add(t1);
 		shapes.add(s);
 		shapes.add(t);
+		shapes.add(c);
+		
 
 		for (Shape shape : shapes) {
 			System.out.println(shape);

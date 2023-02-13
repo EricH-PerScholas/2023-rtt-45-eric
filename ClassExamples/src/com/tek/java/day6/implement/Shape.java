@@ -18,6 +18,12 @@ public abstract class Shape implements AreaCalculation {
 	public String getShapeName() {
 		return name;
 	}
+	
+	// this is overriding the toString of Object which is the parent of all classes
+	@Override
+	public String toString() {
+		return "The area of " + getShapeName() + " is " + calculateArea();
+	}
 
 	
 }
