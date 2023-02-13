@@ -8,6 +8,7 @@ public abstract class Shape implements AreaCalculation {
 	
 	// at this abstract class level we are building any functionality that is common to all shapes
 	// in this case we are saying all shapes have a name
+	// by putting this functionality here... each shape can have its own individual name
 	private String name;
 	
 	public void setShapeName(String name) {
