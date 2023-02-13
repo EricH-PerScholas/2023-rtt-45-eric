@@ -23,6 +23,16 @@ public class Triangle extends Shape {
 	
 	@Override
 	public String toString() {
+		StringBuffer response = new StringBuffer();
+		response.append("The area of ");
+		response.append(getShapeName());
+		response.append(" (base=");
+		response.append(base);
+		// the rest of the string .... 
+		
+		// this calls the toString method to convert the StringBuffer to an immutable string
+		response.toString();
+		
 		return "The area of " + getShapeName() + " (base=" + base + ", height=" + height + ") is " + calculateArea() ;
 	}
 }
