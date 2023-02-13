@@ -20,4 +20,9 @@ public class Triangle extends Shape {
 		return area;
 	}
 	
+	
+	@Override
+	public String toString() {
+		return "The area of " + getShapeName() + " (base=" + base + ", height=" + height + ") is " + calculateArea() ;
+	}
 }

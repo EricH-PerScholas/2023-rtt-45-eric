@@ -20,5 +20,11 @@ public class Square extends Shape {
 		return area;
 	}
 	
-
+	// this method overrides the toString function of Object which is the 
+	// partent of all objects in Java.  Its there automatically and you dont need to do 
+	// anything to use it.
+	@Override
+	public String toString() {
+		return "The area of " + getShapeName() + " (length=" + length + ", height=" + height + ") is " + calculateArea() ;
+	}
 }

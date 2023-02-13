@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ImplementsMain {
+	
+	// Next feature is to be able to have each shape print its own description
 
 	public static void main(String[] args) {
 		Square s = new Square();
@@ -33,9 +35,12 @@ public class ImplementsMain {
 		shapes.add(t);
 
 		for (Shape shape : shapes) {
-			String name = shape.getShapeName(); // this is inherited from Shape class
-			double area = shape.calculateArea(); // this implmentation is manditory due to the AreaCalculation - this is now defined at the Shpae level
-			System.out.println("The area of " + name + " is " + area);
+			System.out.println(shape);
+			
+			// because we have implemented the toString function we can remove these lines of code
+			//String name = shape.getShapeName(); // this is inherited from Shape class
+			//double area = shape.calculateArea(); // this implmentation is manditory due to the AreaCalculation - this is now defined at the Shpae level
+			//System.out.println("The area of " + name + " is " + area);
 			
 			// this if statement was needed when we had AreaCalucation implemented at the Triangle and Square level
 			// since we moved the AreaCalculation interface to the Shape level can run the calculateArea function on Shape and no longer need this
