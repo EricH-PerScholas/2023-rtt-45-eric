@@ -7,18 +7,22 @@ public class ImplementsMain {
 
 	public static void main(String[] args) {
 		Square s = new Square();
+		s.setShapeName("Square");
 		s.setHeight(10);
 		s.setLength(5);
 
 		Square s1 = new Square();
+		s1.setShapeName("Square 1");
 		s1.setHeight(7);
 		s1.setLength(7);
 
 		Triangle t = new Triangle();
+		t.setShapeName("Triangle");
 		t.setBase(5);
 		t.setHeight(10);
 
 		Triangle t1 = new Triangle();
+		t1.setShapeName("Triangle 1");
 		t1.setBase(7);
 		t1.setHeight(4);
 
@@ -29,9 +33,9 @@ public class ImplementsMain {
 		shapes.add(t);
 
 		for (Shape shape : shapes) {
-			String name = shape.shapeName(); // this is inherited from Shape class
+			String name = shape.getShapeName(); // this is inherited from Shape class
 			double area = shape.calculateArea(); // this implmentation is manditory due to the AreaCalculation - this is now defined at the Shpae level
-			System.out.println("The area of a " + name + " is " + area);
+			System.out.println("The area of " + name + " is " + area);
 			
 			// this if statement was needed when we had AreaCalucation implemented at the Triangle and Square level
 			// since we moved the AreaCalculation interface to the Shape level can run the calculateArea function on Shape and no longer need this

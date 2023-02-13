@@ -20,9 +20,5 @@ public class Square extends Shape {
 		return area;
 	}
 	
-	@Override
-	public String shapeName() {
-		return "Squre";
-	}
 
 }
