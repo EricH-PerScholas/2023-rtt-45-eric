@@ -1,6 +1,6 @@
 package com.tek.java.day6.implement;
 
-public class Square extends Shape implements AreaCalculation {
+public class Square extends Shape {
 
 	private int length;
 	private int height;

@@ -1,6 +1,6 @@
 package com.tek.java.day6.implement;
 
-public class Triangle extends Shape implements AreaCalculation {
+public class Triangle extends Shape {
 
 	private int base;
 	private int height;
@@ -19,9 +19,10 @@ public class Triangle extends Shape implements AreaCalculation {
 		return area;
 	}
 	
-	@Override
-	public String shapeName() {
-		return "Triangle";
-	}
+	// we no longer need this method becasue we changed the parent Shape to have  get and set name
+//	@Override
+//	public String shapeName() {
+//		return "Triangle";
+//	}
 
 }
