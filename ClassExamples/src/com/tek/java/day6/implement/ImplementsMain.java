@@ -31,8 +31,16 @@ public class ImplementsMain {
 		Circle c = new Circle();
 		c.setShapeName("Circle");
 		c.setRadius(5);
-
+		
+		// this wont work because a shape is not a circle becuse it does not include the circle implementation
+		//Circle c = new Shape(); 
+		
+		// this will work because a circle is a shape
+		Shape sh = new Circle();
+		
+	
 		List<Shape> shapes = new ArrayList<>();
+		
 		shapes.add(s1);
 		shapes.add(t1);
 		shapes.add(s);
@@ -56,6 +64,10 @@ public class ImplementsMain {
 			//	System.out.println("The area of a " + name + " is " + area);
 			//}
 		}
+		
+		boolean x = true;
+		boolean y = false;
+		
 	}
 
 }

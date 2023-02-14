@@ -27,3 +27,6 @@
 
 
 303.6 - Monday 2/13/23 - [Polymorphism, Object Type casting, Abstraction, interfaces](https://docs.google.com/presentation/d/1Duad68Yz5eB34wDwDgjppX3J5awUIqGexQxOfgX1eBc)
+
+
+303.7 - Tuesday - Wednesday 2/14/23 - [Generic and Java Collection Classes](https://docs.google.com/presentation/d/1a5m6EbORKmqCYqbU8PDOKfW7VqEAhnUW_8v7rVrsXaQ/edit)

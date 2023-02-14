@@ -11,11 +11,11 @@ public abstract class Shape implements AreaCalculation {
 	// by putting this functionality here... each shape can have its own individual name
 	private String name;
 	
-	protected void setShapeName(String name) {
+	public final void setShapeName(String name) {
 		this.name = name;
 	}
 	
-	public String getShapeName() {
+	public final String getShapeName() {
 		return name;
 	}
 	

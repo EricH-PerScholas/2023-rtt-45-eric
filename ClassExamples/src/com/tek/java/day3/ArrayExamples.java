@@ -17,6 +17,9 @@ public class ArrayExamples {
 	public void deleteElement() {
 		int[] arr = new int[10];
 		
+		int[] arr1;
+		arr1 = new int[10];
+		
 		// first we fill our array
 		for ( int i = 0 ; i < arr.length ; i++ ) {
 			arr[i] = i;
