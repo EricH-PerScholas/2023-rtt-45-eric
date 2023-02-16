@@ -2,6 +2,8 @@ package com.tek.java.coffee;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -15,7 +17,7 @@ public class CoffeeShop {
 	// this is also a member variable that is private to this class
 	// this private member variable can only be accessed from inside the coffee shop
 	// class
-	private List<MenuItem> menuItems = new ArrayList<>();
+	private List<MenuItem> menuItems = new LinkedList<>();
 
 	private List<MenuItem> cart = new ArrayList<>();
 
@@ -33,16 +35,31 @@ public class CoffeeShop {
 
 		MenuItem item2 = new MenuItem();
 		item2.setName("Large Coffee");
-		item2.setPrice(5.99);
+		item2.setPrice(7.99);
 		item2.setQuantityInStock(50);
 		menuItems.add(item2);
 
 		// this creates a new menu item using the constructor
-		MenuItem item3 = new MenuItem("Small Cookie", 9.99, 5);
+		MenuItem item3 = new MenuItem("Small Cookie", 3.99, 5);
 		menuItems.add(item3);
 
 		// same as above but we are doing it in 1 line of code
 		menuItems.add(new MenuItem("Egg Sandwich", 14.30, 4));
+		
+		// implmeneting compartitor as an anonymous block
+		// Comparitor is an interface
+		menuItems.sort(            // this is the sort function  being called on the menuItems list it self
+		    new Comparator<MenuItem>() {  // this is an anonymous block that creates a new comparitor
+		    	@Override  // we can not instanciate an interface so we must provide the implementation for that interface
+				public int compare(MenuItem o1, MenuItem o2) {	 // right here in line
+					Double p1 = o1.getPrice(); // these lines are implmenenting the sorting logic.
+					Double p2 = o2.getPrice();
+					
+					return p1.compareTo(p2);
+					
+				} // this is the closing bracket for the compare method.
+			} // this is the closing curley bracket for the compartior implementation
+		); // this is the closing perenthses for the .sort method
 	}
 
 	public void printMenuItems() {
