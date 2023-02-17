@@ -58,6 +58,8 @@ public class Question2 {
 		// print out a message using system.out.format of the average with
 		// decimal format this to show 2 places right of the decimal ( %.2f )
 		// include a new line character at the end of the message
+		
+		// optional : use a decimal formatter and system.out.println rather than format
 	}
 	
 	// this will be in the interface
