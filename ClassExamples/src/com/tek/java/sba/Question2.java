@@ -25,6 +25,15 @@ public class Question2 {
 		
 		q2.setValue(4);
 		// print 2nd message because its already been changed
+		
+		q2.move(50, 3);
+		// print first message
+		
+		q2.move(30, 3);
+		// print 2nd message
+		
+		q2.move(30, 4);
+		// print 2nd message
 	}
 	
 	Question2() {
@@ -41,6 +50,7 @@ public class Question2 {
 		
 	}
 	
+	// this will be in an interface 
 	public void calculateAverage(int[] arr) {
 		// calculate the average
 		// print out a message using system.out.format of the average with
@@ -48,11 +58,13 @@ public class Question2 {
 		// include a new line character at the end of the message
 	}
 	
+	// this will be in the interface
 	public void setValue(int index) {
 		// if the value at array[index] == -1 then print a message saying that you set the value to 1
 		// otherwise print a message saying that it was already changed
 	}
 	
+	// this will be an extra function in one of the 2 classes
 	public void move(int value, int id ) {
 		// if the value at array[id] == 1 then print a message saying "Value with id: {id} is moved to {value}" and set the value to -1
 		// otherwise print a message saying "Value is already -1"
