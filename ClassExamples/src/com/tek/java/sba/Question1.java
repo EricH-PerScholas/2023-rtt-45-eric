@@ -41,7 +41,7 @@ public class Question1 {
 	
 	
 	public void convert( String[] arr ) {
-		// add the elements in the string array to the list of strings
+		// add the elements in the string array to the ArrayList of strings
 	}
 	
 	public void replace(int idx) {

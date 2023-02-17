@@ -72,7 +72,7 @@ public class Question2 {
 	
 	// this will be an extra function in one of the 2 classes
 	public void move(int value, int id ) {
-		// if the value at array[id] == 1 then print a message saying "Value with id: {id} is moved to {value}" and set the value to -1
-		// otherwise print a message saying "Value is already -1"
+		// if the value at array[id] == -1 then print a message saying "Value with id: {id} is moved to {value}" and set the value to 1
+		// otherwise print a message saying "Value is already 1"
 	}
 }
