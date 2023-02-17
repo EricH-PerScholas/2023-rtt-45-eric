@@ -8,6 +8,7 @@ public class Question2 {
 	// they are going to give you the size
 	private static final int ARRAY_SIZE = 5;
 	
+	// this array a class level variable
 	private int[] array;
 	
 	public static void main( String [] args ) {
@@ -51,6 +52,7 @@ public class Question2 {
 	}
 	
 	// this will be in an interface 
+	// and will be the exact same implementation in both classes
 	public void calculateAverage(int[] arr) {
 		// calculate the average
 		// print out a message using system.out.format of the average with
@@ -59,7 +61,9 @@ public class Question2 {
 	}
 	
 	// this will be in the interface
+	// and will be the exact same implementation in both classes
 	public void setValue(int index) {
+		// this will be using the class level variable
 		// if the value at array[index] == -1 then print a message saying that you set the value to 1
 		// otherwise print a message saying that it was already changed
 	}
