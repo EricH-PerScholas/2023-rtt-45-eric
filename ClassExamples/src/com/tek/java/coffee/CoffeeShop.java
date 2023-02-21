@@ -60,6 +60,12 @@ public class CoffeeShop {
 				} // this is the closing bracket for the compare method.
 			} // this is the closing curley bracket for the compartior implementation
 		); // this is the closing perenthses for the .sort method
+		
+		// single line of code that uses a java stream to sort by price
+		// notice the :: notation in the syntax
+		// the elements in the list are of time MenuItem and we are sorting byt he getPrice method / field
+		// how to find this is to google for "java stream sort object by field"
+		menuItems.sort(Comparator.comparing(MenuItem::getPrice));
 	}
 
 	public void printMenuItems() {
