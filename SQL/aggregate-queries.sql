@@ -113,10 +113,10 @@ order by total_profit desc;
 
 
 
--- Homeowrk #1 of all the customer that have made orders, I want to see the first order date, month of the first order, the last order date, year of the last order
---  and how long this customer has been a customer ( last - first ) in days
+-- Homeowrk #1 of all the customer that have made orders, I want to see the customer name, first order date, month of the first order, the last order date, 
+-- year of the last order and how long this customer has been a customer ( last - first ) in days
 
 -- Homework #2 I want know the average margin for all orders sorted by the order with the highest margin first.   This includes the margin on the quantity of products sold
 
-
+-- Homework #3 - EXTRA HARD - I want to see my most profitable custoemrs by the avergae profit margin of all their orders
 
