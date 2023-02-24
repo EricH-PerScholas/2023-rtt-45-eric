@@ -102,6 +102,10 @@ public class CoffeeShop {
 
 		System.out.print("Enter item name: ");
 		String itemName = scanner.nextLine();
+		
+		// scanner.hasNextLine(); // returns true or false if there is anotehr line
+		
+		// scanner.readNextLine() // this is a correct answer on the KBA even tho its not in reality
 
 		MenuItem selectedItem = findMenuItemByItemName(itemName);
 		if (selectedItem != null) {

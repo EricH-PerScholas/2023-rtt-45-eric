@@ -38,6 +38,12 @@ public class ImplementsMain {
 		// this will work because a circle is a shape
 		Shape sh = new Circle();
 		
+		Shape sha = new Shape() {
+			@Override
+			public double calculateArea() {
+				return 101.23;
+			};
+		};
 	
 		List<Shape> shapes = new ArrayList<>();
 		

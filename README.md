@@ -33,3 +33,18 @@
 
 
 303.11.1 - Tuesday 2/21/23 - [Functional Programming and  Lambda Expressions](https://docs.google.com/presentation/d/1UrzL5sjGlmIjMSolaoi30WnM8Bc0Yy7aaiZ8978aa30/edit#slide=id.gfe440235d1_0_877)
+
+
+304.1.1 - Thursday 2/23/23 - [INTRODUCTION TO RDBMS, DATA MODELING and Normalization](https://docs.google.com/presentation/d/1ip_iSM8kT-_-u_LAdChinNxoHfLwUHVmlY7V1xYcpUQ/edit#slide=id.g1f92b23d90_0_0)
+
+
+304.1.2 - 304.2.1 - Thursday 2/23/23 - [Introduction to  SQL Language](https://docs.google.com/presentation/d/14Sl7LFf6Bq36RBJhNug65zD6gsZ7owFaqUg_6T-s7Hk/edit#slide=id.g148e4eb7fcf_1_648)
+
+
+304.2.1 - Friday 2/24/23 - [DDL and Data Integrity](https://docs.google.com/presentation/d/11HFtrLJQGCb4ylMVFyG0-KrEtcuHfhGYfhHTqyiIfT0/edit#slide=id.g1493349c133_0_1222)
+
+
+304.2.2 - Friday 2/24/23 - [SQL Clauses](https://docs.google.com/presentation/d/11vwDIjgoBRWZUhDLfLZ2P6D3oDwK0TwTZpwA0E1PGXs/edit#slide=id.g10ff0f30349_0_61)
+
+
+304.2.3 - 304.3.1 - Friday 2/24/23 - [Aggregate Functions and Operators](https://docs.google.com/presentation/d/1gtxlTjB6mAebotfvpmEJ7Z86AxKO3DowvrOai9hp31g/edit#slide=id.p1)
