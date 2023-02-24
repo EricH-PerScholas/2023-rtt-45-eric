@@ -86,6 +86,37 @@ where p.productline = pl.productline
 group by p.productline;
 
 
--- I want to see the total profit for each item including the number of items purchased
--- so .. if product x was ordered 10 times and had 50 items ordered in each order I want to see the total gross margin
+-- a) I want to see the product code, product name, total quantity ordered, cost of goods sold (COGS), net sales, and total profit for each product that was purchased
+-- a) so .. if product x was ordered 10 times and had 50 items ordered in each order I want to see the total gross margin
+-- b) now .. lets increase the complixity 
+-- b) I want to use a subtable to calculate total profit and profit margin percentage and I want to see the lowest margin products first
+select subtable.*, subtable.net_sales - subtable.COGS as total_profit, (net_sales - COGS) / net_sales * 100 as profit_margin
+from 
+	(
+		select p.productCode, p.productName, p.buyPrice, p.MSRP, sum(od.quantityOrdered) as total_quantity_ordered, 
+			sum(p.buyPrice * od.quantityOrdered) as COGS, sum(p.MSRP * od.quantityOrdered) as net_sales
+		from products p, orderdetails od
+		where p.productCode = od.productCode
+		group by p.productCode
+	) as subtable
+order by profit_margin asc;
+
+-- answer to part a
+select p.productCode, p.productName, count(quantityOrdered) as quantity_sold, sum(buyPrice * quantityOrdered) as COGS, sum(MSRP * quantityOrdered) as net_sales, 
+	sum(MSRP * quantityOrdered) - sum(buyPrice * quantityOrdered)  as total_profit
+from products p, orderdetails od
+where p.productCode = od.productCode
+group by p.productCode
+order by total_profit desc;
+
+
+
+
+
+-- Homeowrk #1 of all the customer that have made orders, I want to see the first order date, month of the first order, the last order date, year of the last order
+--  and how long this customer has been a customer ( last - first ) in days
+
+-- Homework #2 I want know the average margin for all orders sorted by the order with the highest margin first.   This includes the margin on the quantity of products sold
+
+
 
