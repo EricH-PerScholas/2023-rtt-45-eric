@@ -1,6 +1,9 @@
 package hibernate;
 
 public class OneToManyExample {
+	
+	// One to Many - https://attacomsian.com/blog/spring-data-jpa-one-to-many-mapping
+	// Many to Many - https://attacomsian.com/blog/spring-data-jpa-many-to-many-mapping
 
 	public static void main(String[] args) {
 		CustomerDAO customerDao = new CustomerDAO();
@@ -25,10 +28,11 @@ public class OneToManyExample {
 		customer.setState("CO");
 		customer.setCountry("USA");	
 		customer.setEmployee(e);
-		customerDao.insert(customer);
 		
-		//e.getCustomers().add(customer);
-		//employeeDao.update(e);
+		//customerDao.insert(customer);
+		
+		e.getCustomers().add(customer);
+		employeeDao.update(e);
 	
 	}
 }
