@@ -1,5 +1,6 @@
 package hibernate;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -12,6 +13,13 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@ToString
 @Entity
 @Table(name = "employees")
 public class Employee {
@@ -45,99 +53,8 @@ public class Employee {
 	@Column(name = "vacation_hours")
 	private Integer vacationHours;
 
+	@ToString.Exclude
 	@OneToMany(mappedBy = "employee", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	private List<Customer> customers;
-	
-	
-	
-
-	@Override
-	public String toString() {
-		return "Employee [id=" + id + ", officeId=" + officeId + ", lastName=" + lastName + ", firstName=" + firstName
-				+ ", extension=" + extension + ", email=" + email + ", reportsTo=" + reportsTo + ", jobTitle="
-				+ jobTitle + ", vacationHours=" + vacationHours + "]";
-	}
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public Integer getOfficeId() {
-		return officeId;
-	}
-
-	public void setOfficeId(Integer officeId) {
-		this.officeId = officeId;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-
-	public String getFirstName() {
-		return firstName;
-	}
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public String getExtension() {
-		return extension;
-	}
-
-	public void setExtension(String extension) {
-		this.extension = extension;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public Integer getReportsTo() {
-		return reportsTo;
-	}
-
-	public void setReportsTo(Integer reportsTo) {
-		this.reportsTo = reportsTo;
-	}
-
-	public String getJobTitle() {
-		return jobTitle;
-	}
-
-	public void setJobTitle(String jobTitle) {
-		this.jobTitle = jobTitle;
-	}
-
-	public Integer getVacationHours() {
-		return vacationHours;
-	}
-
-	public void setVacationHours(Integer vacationHours) {
-		this.vacationHours = vacationHours;
-	}
-
-	public List<Customer> getCustomers() {
-		return customers;
-	}
-
-	public void setCustomers(List<Customer> customer) {
-		this.customers = customer;
-	}
-
-	
-	
+	private List<Customer> customers = new ArrayList<Customer>();
+		
 }

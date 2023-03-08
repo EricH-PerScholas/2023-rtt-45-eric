@@ -1,5 +1,8 @@
 package hibernate;
 
+import java.util.Calendar;
+import java.util.Date;
+
 public class OneToManyExample {
 	
 	// One to Many - https://attacomsian.com/blog/spring-data-jpa-one-to-many-mapping
@@ -33,6 +36,23 @@ public class OneToManyExample {
 		
 		e.getCustomers().add(customer);
 		employeeDao.update(e);
+		
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(new Date());
+		cal.add(Calendar.DATE, -30);
+		Date dateBefore30Days = cal.getTime();	
+		
+		System.out.println("is date before " + dateBefore30Days.before(dateBefore30Days));
+		
+		
+		Payment p = new Payment();
+		p.setAmount(50000.55);
+		p.setPaymentDate(dateBefore30Days);
+		p.setCustomer(customer);
+		p.setCheckNumber("123455");
+		
+		customer.getPayments().add(p);
+		customerDao.update(customer);
 	
 	}
 }
