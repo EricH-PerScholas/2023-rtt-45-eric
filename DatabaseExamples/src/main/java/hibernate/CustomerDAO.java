@@ -12,7 +12,7 @@ import org.hibernate.cfg.Configuration;
 public class CustomerDAO {
 	
 
-	public void insert(Customer customer) {
+	protected void insert(Customer customer) {
 		SessionFactory factory = new Configuration().configure().buildSessionFactory();
 		Session session = factory.openSession();
 		session.getTransaction().begin();

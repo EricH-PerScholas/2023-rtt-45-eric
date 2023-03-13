@@ -15,7 +15,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
@@ -23,8 +25,28 @@ import lombok.ToString;
 @Setter
 @Entity
 @ToString
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "customers") 
 public class Customer {
+	
+	// Blockbuster Video Rental
+	// Create 3 tables each with its own PK and appropriate FKs : User, Movie, and Movie Rental
+	// create a schema and the tables and FKs using workbench and set hibernate to validate 
+	// use business sense to figure out data types and which columns should be not null and default values
+	// create a hibernate.cfg.xml
+	// user table : first name, last name, email, password, create date (TIMESTAMP)  @Temporal
+	// movie table : name, year released, rating, and rental price, late fee
+	// movie rental table : movie id, user id, checkout date (TIMESTAMP), checkin date (TIMESTAMP)
+	// add 2 movies and 2 users to the database with an SQL insert statement in workbench
+	// can add another 1 or 2 user and move using hibernate
+	// create a changePassword( UserId, Password ) function that updates the user ( not in the DAO )
+	// create a checkOut( Movie, User ) and checkIn ( Movie, User )  ( not in the DAO )
+	// create a function that will show the list movies that are checked out and the users that have them checked out ( not in the DAO )
+	// BONUS .. add a due date to the movie rental table and a function double calculateLateFee(User, Movie, FutureDate)
+	// DOUBLE SECRET BONUS - hook it up to a menu with the scanner
+	
+
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -69,15 +91,16 @@ public class Customer {
 	@Column(name = "salesRepEmployeeNumber", insertable=false, updatable=false)
 	private Integer salesRepEmployeeNumber;
 
-	@Column(name = "credit_limit", columnDefinition="decimal", precision=10, scale=2)
-	private Double creditLimit;
-	
 	// salesRepEmployeeNumber allows for null values and since this is a foreign key we need to set
 	// optional = true and nullable = true to tell hibernate that null values are okay
 	@ToString.Exclude
 	@ManyToOne(fetch = FetchType.EAGER, optional = true, cascade = CascadeType.ALL)
     @JoinColumn(name = "salesRepEmployeeNumber", nullable = true)
     private Employee employee;
+	
+
+	@Column(name = "credit_limit", columnDefinition="decimal", precision=10, scale=2)
+	private Double creditLimit;
     
     @ToString.Exclude
     @OneToMany(mappedBy = "customer", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
