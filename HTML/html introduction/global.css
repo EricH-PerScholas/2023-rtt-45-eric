@@ -1,0 +1,16 @@
+h3 {
+    color:rgba(0, 0, 255,1);
+    background-color:#f1f516;
+}
+
+.gradient {
+    text-align: center;
+    width:100%;
+    height:100px;
+    background: rgb(254,14,0);
+    background: linear-gradient(90deg, rgba(254,14,0,1) 0%, rgba(9,121,39,1) 49%, rgba(0,4,255,1) 100%);
+}
+
+body {
+    font-family: 'Montserrat' !important;
+}

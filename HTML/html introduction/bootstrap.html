@@ -43,6 +43,8 @@ a:hover {
 
 #firsth1 {
     text-decoration: underline;
+    border-radius: 20px;
+    padding-left:30px;
 }
 
 .absolute-example {
@@ -52,9 +54,56 @@ a:hover {
     position: absolute;
 }
 
+.circle {
+    margin-left: 30px;
+    width: 30px;
+    height: 30px;
+    background-color: blue;
+    border-radius: 15px;
+    color:aliceblue;
+    text-align: center;
+    vertical-align: middle;
+    padding-top:
+}
+
 </style>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="box-shadow: 0 4px 2px -2px gray;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/signup.html">Signup</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/bootstrap.html">Bootstrap Example</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Account
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">email@address.com</a></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
     <h1 id="firsth1" class="page-header" style="color:red;">This is a page title</h1>
     <h2 class="page-header" style="background-color: grey; display:none;">This is another page title</h2>
     <h1 class="page-header">This is a second h1</h1>
@@ -63,6 +112,8 @@ a:hover {
     <p><a href="/bootstrap.html">This is a link</a></p>
     <p><a href="/asdf">This is not visisted</a></p>
     <br>
+
+    <div class="circle">1</div>
 
     
 
