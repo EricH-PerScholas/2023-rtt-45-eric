@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       let width = prompt("Enter width: ");
+       let height = prompt("Enter height");
+       var s = "";
+       for(let row = 0; row< height; row++){
+            let alt = row % 2;
+            let len = (width-alt);
+            console.log("row = " + row + " alt = " + alt + " total width = " + (width-alt));
+            if ( alt == 1 ) {
+                s += " ";
+            }
+            for(let col= 0; col< len ; col++){
+                s+= "* ";
+            }
+            s +="\n"
+       }
+       console.log(s);
+
+    </script>
+</body>
+</html>

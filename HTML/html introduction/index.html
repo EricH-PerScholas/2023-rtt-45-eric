@@ -19,6 +19,20 @@
 
 </head>
 
+<script>
+    // this is a comment
+    /* this kind of comment too */
+    console.log("This is a test script");
+    console.log('"3" == 3 ' + ("3" == 3));
+    console.log('3 == 3 ' + (3 == 3));
+    console.log('"3" == "3" ' + ("3" == "3"));
+    console.log('"3" === 3 ' + ("3" === 3));
+
+    function prime(primeNumber) {
+
+    }
+</script>
+
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light" style="box-shadow: 0 4px 2px -2px gray;">
         <div class="container-fluid">
@@ -102,7 +116,36 @@
         <div class="container">
             <h2 style="text-align: center;">This is the 2nd section on the page</h2>
         </div>
+
+        <div>
+            @Scheduled(cron = "0 0 10 * * ?")
+            public void runNotifications() {
+                if (isEnabled) {
+                    try {
+                        processNotifications();
+                    } catch (Exception e) {
+                        log.error("Failed to process notificiations", e);
+                    }
+                }
+            }
+        </div>
+        <br><br>
+        <pre>
+            @Scheduled(cron = "0 0 10 * * ?")
+            public void runNotifications() {
+                if (isEnabled) {
+                    try {
+                        processNotifications();
+                    } catch (Exception e) {
+                        log.error("Failed to process notificiations", e);
+                    }
+                }
+            }
+        </pre>
     </section>
+
+
+    
 
 </body>
 
