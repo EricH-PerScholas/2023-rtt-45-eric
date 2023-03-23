@@ -1,12 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300&display=swap" rel="stylesheet">
+
 </head>
-<body>
-    
+
+<body style="background-color: hsl(228, 37%, 92%);">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="box-shadow: 0 4px 2px -2px gray;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/signup.html">Signup</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/bootstrap.html">Bootstrap Example</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/bootstrap.html">Another Example</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Account
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">email@address.com</a></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="pt-5 pb-5" style="background-color:rgb(218, 225, 234)">
+        <div class="container text-center">
+            <h2 class="m-0">Create New Account</h2>
+        </div>
+    </section>
+
+    <script>
+        function cancelClicked() {
+            //event.preventDefault();
+            //alert("Cancel Clicked");
+
+            let items = document.querySelectorAll('.is-invalid');
+            // i represents each element in the list items
+            for (i of items) {
+                console.log(i);
+                let item = i;
+                item.classList.remove("is-invalid");
+            }
+
+        }
+
+        function formSubmit() {
+            let emailInput = document.getElementById('exampleInputEmail1');
+            let emailValue = emailInput.value;
+           
+            console.log(emailValue);
+
+            if ( emailValue == '' ) {
+                //alert("Email is required");
+                // add the bootstrap class is-invalid to show an error
+                emailInput.classList.add("is-invalid");
+                // this will set the value of the email input field to what ever text
+                emailInput.value = "Enter your email";
+                // now we can add an individal style property on the input field for color 
+                //emailInput.style.color = 'red';
+
+                // here we can change the CSS in the style tag to be what we want
+                emailInput.style.cssText = "color:green;"
+
+                document.getElementById('emailHelp').innerHTML = "<p>Please enter your email address</p>";
+                document.getElementById('emailHelp').style.cssText = "color:red;";
+            }
+
+        }
+    </script>
+
+    <section class="pt-5 pb-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-10 col-md-7 col-xl-5">
+                    <form>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">* Email address</label>
+                            <input type="text" placeholder="Email address" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="name" aria-describedby="nameHelp">
+                            <div id="nameHelp" class="form-text">Let us know who you are</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" aria-describedby="passwordHelp">
+                            <div id="passwordHelp" class="form-text">Minimum 8 characaters with uppercase, lowercase, and a number</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="confirmPassword" class="form-label">Confirm Password</label>
+                            <input type="password" class="form-control is-invalid" id="confirmPassword" aria-describedby="confirmPasswordHelp">
+                            <div id="confirmPasswordHelp" class="form-text">Re-enter your password.</div>
+                        </div>
+
+                        <button type="button" class="btn btn-primary mt-3 me-2" onclick="formSubmit()">Create Account</button>
+                        <button type="button"  class="btn btn-secondary mt-3" onclick="cancelClicked()">Cancel</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
 </body>
+
 </html>
