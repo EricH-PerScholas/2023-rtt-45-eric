@@ -1,5 +1,7 @@
-<section>
-    Footer Stuff goes here
+<section class="py-5 bg-dark-grey">
+    <div class="container">
+
+    </div>
 </section>
 
 </body>
