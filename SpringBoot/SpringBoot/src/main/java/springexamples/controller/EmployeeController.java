@@ -25,8 +25,9 @@ public class EmployeeController {
 
         ModelAndView response = new ModelAndView("employee/employee-search");
 
-        List<Employee> employees = employeeDao.getAllEmployees();
+        List<Employee> employees = employeeDao.findByFirstNameContainingOrLastNameContainingIgnoreCase(search,search);
         response.addObject("employeesList", employees);
+        response.addObject("searchParam",search);
 
         return response;
     }
