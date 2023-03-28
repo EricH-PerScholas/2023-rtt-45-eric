@@ -3,6 +3,54 @@
 
 <link rel="stylesheet" href="/pub/css/global.css">
 
+<script>
+    function onClickFunction(){
+        console.log("On click clicked");
+        let name = document.getElementById("name");
+        console.log(name);
+        console.log(name.value);
+
+        // lets make the name value required
+        if ( name.value == "" ) {
+            console.log("Name is required");
+            name.classList.add("is-invalid")
+        }
+
+        // create a new regular expression
+        const re = new RegExp("[a-zA-Z]+");
+
+        // the value that we want to match the regex against is - name.value
+        // this is the value of the input field
+        // the function match in javascript is going to do the regex match and we pass in the regex itself
+        // match returns boolean true or false if matched or not
+        const found = name.value.match(re);
+        if ( found ) {
+            console.log("the name matches the regex")
+        } else {
+            console.log("the name does not match the regex")
+        }
+    }
+</script>
+
+<section class="pt-5 pb-5" style="background-color: blanchedalmond;">
+    <div class="container">
+    <form>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">* Email address</label>
+            <input type="text" placeholder="Email address" class="form-control" id="exampleInputEmail1"
+                   aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+            <label for="name" class="form-label">Full Name</label>
+            <input type="text" class="form-control" id="name" aria-describedby="nameHelp">
+            <div id="nameHelp" class="form-text">Let us know who you are</div>
+        </div>
+        <button type="button" class="btn btn-primary" onclick="onClickFunction()">Submit</button>
+    </form>
+    </div>
+</section>
+
 <section class="pt-5 pb-5" style="background-color:bisque">
     <div class="container">
 
