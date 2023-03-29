@@ -11,13 +11,18 @@
 <section class="pt-5 pb-5 bg-light-grey">
     <div class="container">
         <div class="row text-center justify-content-center">
-            <div class="col-7">
+            <div class="col-5">
                 <form>
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" name="search" placeholder="Employee First Name"
-                               aria-label="Employee First Name" aria-describedby="search" value="${searchParam}">
-                        <button class="btn btn-outline-secondary" id="search">Search</button>
+                        <input type="text" class="form-control" name="firstName" placeholder="Employee First Name"
+                               aria-label="Employee First Name" value="${searchParamFirst}">
                     </div>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" name="lastName" placeholder="Employee Last Name"
+                               aria-label="Employee First Name" value="${searchParamLast}">
+                    </div>
+                    <button class="btn btn-outline-secondary" id="search">Search</button>
+
                 </form>
             </div>
         </div>

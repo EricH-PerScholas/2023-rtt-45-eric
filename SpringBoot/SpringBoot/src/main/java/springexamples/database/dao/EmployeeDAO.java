@@ -12,11 +12,14 @@ public interface EmployeeDAO extends JpaRepository<Employee, Long> {
     @Query("FROM Employee e")
     List<Employee> getAllEmployees();
 
+    List<Employee> findByFirstNameContainingIgnoreCase(String firstName);
+    List<Employee> findByLastNameContainingIgnoreCase(String lastName);
+
     List<Employee> findByFirstNameContainingOrLastNameContainingIgnoreCase(String firstName, String lastName);
 
-    @Query(value="select * from employees where lower(firstname) = lower(:firstName);", nativeQuery = true)
-    List<Employee> usingNativeQuery(String firstName, String lastName);
+   // @Query(value="select * from employees where lower(firstname) = lower(:firstName);", nativeQuery = true)
+    //List<Employee> usingNativeQuery(String firstName, String lastName);
 
-    @Query("Select e from Employee e where lower(e.firstName) = lower(:firstName)")
-    List<Employee> usingJPAQuery(String firstName, String lastName);
+    //@Query("Select e from Employee e where lower(e.firstName) = lower(:firstName)")
+    //List<Employee> usingJPAQuery(String firstName, String lastName);
 }
