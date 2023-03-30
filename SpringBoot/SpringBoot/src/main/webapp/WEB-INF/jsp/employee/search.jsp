@@ -37,6 +37,7 @@
         <table class="table table-striped border">
             <thead>
                 <tr>
+                    <th scope="col">Id</th>
                     <th scope="col">First Name</th>
                     <th scope="col">Last Name</th>
                     <th scope="col">Email</th>
@@ -46,7 +47,8 @@
             <tbody>
                 <c:forEach items="${employeesList}" var="emp">
                     <tr>
-                        <th scope="row">${emp.firstName}</th>
+                        <td><a href="/employee/detail/${emp.id}">${emp.id}</a></td>
+                        <td>${emp.firstName}</td>
                         <td>${emp.lastName}</td>
                         <td>${emp.email}</td>
                         <td>${emp.jobTitle}</td>

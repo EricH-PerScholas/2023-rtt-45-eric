@@ -42,7 +42,7 @@
                     <a class="nav-link" href="/bootstrap">Bootstrap Example</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/employee-search">Employee Search</a>
+                    <a class="nav-link" href="/employee/search">Employee Search</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
