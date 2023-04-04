@@ -55,6 +55,7 @@ public class ErrorController {
     private String getHTMLStackTrace(String[] stack) {
         StringBuffer result = new StringBuffer();
         for (String frame : stack) {
+            // !!!!! CHANGE THIS TO YOUR PACKAGE NAME
             if (frame.contains("springexamples")) {
                 result.append(" &nbsp; &nbsp; &nbsp;" + frame.trim().substring(3) + "<br>\n");
             } else if (frame.contains("Caused by:")) {
