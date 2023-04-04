@@ -16,14 +16,9 @@ import java.util.Map;
 @ControllerAdvice
 public class ErrorController {
 
-//    @RequestMapping(value = "/error")
-//    public String error404(HttpServletRequest request) {
-//
-//        String originalUri = (String) request.getAttribute("javax.servlet.forward.request_uri");
-//        log.info("Requested URL not found : " + request.getMethod() + " " + originalUri);
-//
-//        return "error/404";
-//    }
+    // !!!!! CHANGE THIS TO YOUR PACKAGE NAME
+    private static final String PACKAGE_NAME = "springexamples";
+    
 
     @ExceptionHandler(Exception.class)
     public ModelAndView handleAllException(HttpServletRequest request, Exception ex) {
@@ -55,8 +50,7 @@ public class ErrorController {
     private String getHTMLStackTrace(String[] stack) {
         StringBuffer result = new StringBuffer();
         for (String frame : stack) {
-            // !!!!! CHANGE THIS TO YOUR PACKAGE NAME
-            if (frame.contains("springexamples")) {
+            if (frame.contains(PACKAGE_NAME)) {
                 result.append(" &nbsp; &nbsp; &nbsp;" + frame.trim().substring(3) + "<br>\n");
             } else if (frame.contains("Caused by:")) {
                 result.append("Caused By:<br>");
