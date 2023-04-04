@@ -9,6 +9,9 @@ import lombok.ToString;
 @ToString
 public class EmployeeFormBean {
 
+    // we add this as a way to pass the id to and from the controller using a hidden form input field
+    private Integer id;
+
     private String email;
 
     private String firstName;
