@@ -22,6 +22,8 @@ public class EmployeeFormBean {
 
     private String extension;
 
+    private String profileImage;
+
     private Integer vacationHours;
 
     private Integer officeId;

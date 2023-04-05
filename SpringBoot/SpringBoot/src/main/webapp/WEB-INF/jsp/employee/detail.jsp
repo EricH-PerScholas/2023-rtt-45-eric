@@ -40,6 +40,10 @@
                 <td>Vacation Hours</td>
                 <td>${employee.vacationHours}</td>
             </tr>
+            <tr>
+                <td>Profile Image</td>
+                <td><img src="${employee.profileImage}"></td>
+            </tr>
         </table>
     </div>
 </section>

@@ -52,6 +52,10 @@
                         <input type="text" class="form-control" id="jobTitle" name="jobTitle" aria-describedby="jobTitleHelp" value="${form.jobTitle}">
                     </div>
                     <div class="mb-4">
+                        <label for="profileImage" class="form-label">Profile Image</label>
+                        <input type="text" class="form-control" id="profileImage" name="profileImage" aria-describedby="profileImageHelp" value="${form.profileImage}">
+                    </div>
+                    <div class="mb-4">
                         <label for="vacationHours" class="form-label">Vacation Hours</label>
                         <input type="number" class="form-control" id="vacationHours" name="vacationHours" aria-describedby="vacationHoursHelp" value="${form.vacationHours}">
                     </div>

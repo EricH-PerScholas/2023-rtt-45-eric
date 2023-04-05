@@ -69,6 +69,7 @@ public class EmployeeController {
         form.setJobTitle(emp.getJobTitle());
         form.setVacationHours(emp.getVacationHours());
         form.setOfficeId(emp.getOfficeId());
+        form.setProfileImage(emp.getProfileImage());
 
         // add the form bean to the model to pass it to the jsp page
         response.addObject("form", form);
@@ -110,6 +111,7 @@ public class EmployeeController {
         emp.setJobTitle(form.getJobTitle());
         emp.setVacationHours(form.getVacationHours());
         emp.setOfficeId(form.getOfficeId());
+        emp.setProfileImage(form.getProfileImage());
 
         // in spring boot data there is only a single method called save that is used for both create and update
         employeeDao.save(emp);
