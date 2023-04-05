@@ -42,6 +42,7 @@
                     <th scope="col">Last Name</th>
                     <th scope="col">Email</th>
                     <th scope="col">Job Title</th>
+                    <th scope="col">Office City</th>
                     <th scope="col">Edit</th>
                 </tr>
             </thead>
@@ -52,7 +53,8 @@
                         <td>${emp.firstName}</td>
                         <td>${emp.lastName}</td>
                         <td>${emp.email}</td>
-                        <td>${emp.jobTitle}</td>
+                        <td>${emp.asdf}</td>
+                        <td>${emp.city}</td>
                         <td><a href="/employee/edit/${emp.id}">Edit</a></td>
                     </tr>
                 </c:forEach>

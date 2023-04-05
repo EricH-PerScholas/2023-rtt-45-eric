@@ -15,6 +15,7 @@ import springexamples.formbeans.EmployeeFormBean;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @Slf4j
 @Controller
@@ -129,33 +130,43 @@ public class EmployeeController {
 
         ModelAndView response = new ModelAndView("employee/search");
 
-        // by this line of code we are assuming both are empty thus creating a new list with no search results
-        // it has no results because there are no values coming.
-        List<Employee> employees = new ArrayList<>();
+        // check if both firstName and lastName have a value
+        if (StringUtils.isEmpty(firstName) && StringUtils.isEmpty(lastName)) {
+            // if so run the qurey that works with both values
+            log.debug("Both first name and last name are empty so use our special query");
+            List<Map<String,Object>> employees = employeeDao.findAllWithOfficeName();
+            response.addObject("employeesList", employees);
+
+        }
 
         // check if both firstName and lastName have a value
         if (!StringUtils.isEmpty(firstName) && !StringUtils.isEmpty(lastName)) {
             // if so run the qurey that works with both values
             log.debug("Both first name and last name have a value");
-            employees = employeeDao.findByFirstNameContainingOrLastNameContainingIgnoreCase(firstName, lastName);
+            List<Employee> employees = employeeDao.findByFirstNameContainingOrLastNameContainingIgnoreCase(firstName, lastName);
+            response.addObject("employeesList", employees);
+
         }
 
         // check if the first name is not empty and the last name is empty
         if (!StringUtils.isEmpty(firstName) && StringUtils.isEmpty(lastName)) {
             // we run our query that checks the fist name field only
             log.debug("First name has a value and last name is empty");
-            employees = employeeDao.findByFirstNameContainingIgnoreCase(firstName);
+            List<Employee> employees = employeeDao.findByFirstNameContainingIgnoreCase(firstName);
+            response.addObject("employeesList", employees);
+
         }
 
         // check if the first name is empty and the last name is not empty
         if (StringUtils.isEmpty(firstName) && !StringUtils.isEmpty(lastName)) {
             // we run our query that checks the last name field only
             log.debug("Last name has a value and first name is empty");
-            employees = employeeDao.findByLastNameContainingIgnoreCase(lastName);
+            List<Employee> employees = employeeDao.findByLastNameContainingIgnoreCase(lastName);
+            response.addObject("employeesList", employees);
+
         }
 
 
-        response.addObject("employeesList", employees);
         response.addObject("searchParamFirst", firstName);
         response.addObject("searchParamLast", lastName);
 
