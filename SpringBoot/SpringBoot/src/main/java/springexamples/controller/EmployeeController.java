@@ -81,7 +81,7 @@ public class EmployeeController {
         return response;
     }
 
-    @GetMapping("/createSubmit")
+    @PostMapping("/createSubmit")
     public ModelAndView createSubmit(EmployeeFormBean form) {
         ModelAndView response = new ModelAndView("employee/create");
 
@@ -119,6 +119,10 @@ public class EmployeeController {
 
         // now we add the populated form back to the model so when page can display itself again
         response.addObject("form", form);
+
+
+        // instead of processing a JSP view we can also redirect to another page
+        // response.setViewName("redirect:/employee/edit/" + emp.getId());
 
         return response;
     }

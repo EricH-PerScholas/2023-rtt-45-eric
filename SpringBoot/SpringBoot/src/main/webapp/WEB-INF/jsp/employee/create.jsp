@@ -20,7 +20,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-sm-10 col-md-7 col-xl-5">
-                <form action="/employee/createSubmit">
+                <form action="/employee/createSubmit" method="POST">
                     <input type="hidden" name="id" value="${form.id}"/>
                     <div class="mb-4">
                         <label for="exampleInputEmail1" class="form-label">Email address</label>
