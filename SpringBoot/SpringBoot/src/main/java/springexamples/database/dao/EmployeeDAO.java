@@ -2,11 +2,13 @@ package springexamples.database.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
 import springexamples.database.entity.Employee;
 
 import java.util.List;
 import java.util.Map;
 
+@Repository
 public interface EmployeeDAO extends JpaRepository<Employee, Long> {
 
     // this is a JPA hibernate query
