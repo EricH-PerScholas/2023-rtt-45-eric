@@ -18,10 +18,10 @@ import java.io.IOException;
 public class FileUploadController {
 
     @GetMapping("/fileupload")
-    public ModelAndView fileUpload() throws IOException {
-        ModelAndView response = new ModelAndView("fileupload");
-
-        return response;
+    public String fileUpload() throws IOException {
+        // if the method is not doign anything other than returning a view
+        // we can simply return a string from this function and spring MVC will know that it is the view name
+        return "fileupload";
     }
 
     @PostMapping("/fileupload")

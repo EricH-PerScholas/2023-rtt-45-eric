@@ -23,7 +23,7 @@ public interface EmployeeDAO extends JpaRepository<Employee, Long> {
     List<Employee> findByFirstNameContainingOrLastNameContainingIgnoreCase(String firstName, String lastName);
 
 
-    @Query(value=" select e.*, o.city, e.job_title as 'asdf' from employees e, offices o where e.office_id = o.id", nativeQuery=true)
+    @Query(value=" select e.*, o.city, e.job_title as 'jobTitle' from employees e, offices o where e.office_id = o.id", nativeQuery=true)
     List<Map<String,Object>> findAllWithOfficeName();
 
    // @Query(value="select * from employees where lower(firstname) = lower(:firstName);", nativeQuery = true)
