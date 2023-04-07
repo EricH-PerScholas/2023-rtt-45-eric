@@ -8,7 +8,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import springexamples.database.dao.UserDAO;
+import springexamples.database.dao.UserRoleDAO;
 import springexamples.database.entity.User;
+import springexamples.database.entity.UserRole;
 import springexamples.formbeans.CreateUserFormBean;
 
 @Slf4j
@@ -17,6 +19,9 @@ public class SlashController {
 
     @Autowired
     private UserDAO userDao;
+
+    @Autowired
+    private UserRoleDAO userRoleDao;
 
     @Autowired
     private PasswordEncoder passwordEncoder;
@@ -56,6 +61,7 @@ public class SlashController {
         ModelAndView response = new ModelAndView("signup");
         log.debug("In the signup controller post method");
 
+        // first we create our user
         User user = new User();
         user.setEmail(form.getEmail());
         user.setFullName(form.getFullName());
@@ -64,7 +70,18 @@ public class SlashController {
         String encryptedPassword = passwordEncoder.encode(form.getPassword());
         user.setPassword(encryptedPassword);
 
+        // save our user .. when hibernate saves this user it will auto generate PK
+        // this line of code is doing 2 things .. saving the user to the database and populating the new PK id in the entity
         userDao.save(user);
+
+        // create our user role object
+        UserRole userRole = new UserRole();
+        // we are going to hard code the default user role to be "USER"
+        userRole.setRoleName("USER");
+        // so when we go to set the user id FK on the user role entity the user id has been populated already.
+        userRole.setUserId(user.getId());
+
+        userRoleDao.save(userRole);
 
         log.debug(form.toString());
 

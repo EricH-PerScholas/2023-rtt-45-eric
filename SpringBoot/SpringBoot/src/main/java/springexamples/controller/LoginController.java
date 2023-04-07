@@ -10,7 +10,9 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class LoginController {
 
-    @GetMapping("/login/login")
+    // this method is used to display the login page itself and that is all
+    // it just gives us a url for the login.jsp
+    @GetMapping("/login/loginPage")
     public ModelAndView setup() {
         log.debug("In the login controller method");
         ModelAndView response = new ModelAndView("login/login");

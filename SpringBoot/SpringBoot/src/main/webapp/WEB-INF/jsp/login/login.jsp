@@ -11,14 +11,17 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-sm-10 col-md-7 col-xl-5">
+                <!-- the method must always be post and the action must match the security config  .loginProcessingUrl -->
                 <form method="POST" action="/login/loginpost">
                     <div class="mb-3">
                         <label class="form-label">Email</label>
+                        <!-- this input name must be username because that is what spring security wants -->
                         <input type="text" name="username"  class="form-control">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Password</label>
-                        <input type="text" name="password"  class="form-control">
+                        <!-- this input name must be password because that is what spring security wants -->
+                        <input type="password" name="password"  class="form-control">
                     </div>
 
                     <button type="submit" id="create_btn" class="btn btn-primary mt-3 me-2">Login</button>
