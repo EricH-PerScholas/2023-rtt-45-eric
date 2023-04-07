@@ -3,15 +3,23 @@ package springexamples.controller;
 import jakarta.servlet.http.HttpSession;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-import springexamples.database.dao.EmployeeDAO;
+import springexamples.database.dao.UserDAO;
+import springexamples.database.entity.User;
 import springexamples.formbeans.CreateUserFormBean;
 
 @Slf4j
 @Controller
 public class SlashController {
+
+    @Autowired
+    private UserDAO userDao;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
 
     @RequestMapping(value = { "/index", "/", "/index.html" }, method = RequestMethod.GET)
@@ -47,6 +55,16 @@ public class SlashController {
 
         ModelAndView response = new ModelAndView("signup");
         log.debug("In the signup controller post method");
+
+        User user = new User();
+        user.setEmail(form.getEmail());
+        user.setFullName(form.getFullName());
+
+        // this is needed by spring security to encrypt passwords as the user is being created.
+        String encryptedPassword = passwordEncoder.encode(form.getPassword());
+        user.setPassword(encryptedPassword);
+
+        userDao.save(user);
 
         log.debug(form.toString());
 
