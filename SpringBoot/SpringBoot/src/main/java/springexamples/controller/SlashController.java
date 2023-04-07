@@ -4,12 +4,10 @@ import jakarta.servlet.http.HttpSession;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.SessionAttribute;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import springexamples.database.dao.EmployeeDAO;
+import springexamples.formbeans.CreateUserFormBean;
 
 @Slf4j
 @Controller
@@ -43,6 +41,18 @@ public class SlashController {
 
         return response;
     }
+
+    @PostMapping("/signup")
+    public ModelAndView setup(CreateUserFormBean form) {
+
+        ModelAndView response = new ModelAndView("signup");
+        log.debug("In the signup controller post method");
+
+        log.debug(form.toString());
+
+        return response;
+    }
+
 
     @RequestMapping(value = "/bootstrap", method = RequestMethod.GET)
     public ModelAndView bootstrapExample(HttpSession session) {
