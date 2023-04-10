@@ -4,6 +4,7 @@ import jakarta.websocket.server.PathParam;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -20,6 +21,7 @@ import java.util.Map;
 @Slf4j
 @Controller
 @RequestMapping("/employee")
+@PreAuthorize("hasAuthority('ADMIN')")
 public class EmployeeController {
 
     @Autowired
