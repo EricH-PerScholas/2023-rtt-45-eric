@@ -17,6 +17,9 @@ public interface EmployeeDAO extends JpaRepository<Employee, Long> {
 
     Employee findById(Integer id);
 
+    Employee findByEmail(String email);
+    boolean existsByEmail(String email);
+
     List<Employee> findByFirstNameContainingIgnoreCase(String firstName);
     List<Employee> findByLastNameContainingIgnoreCase(String lastName);
 

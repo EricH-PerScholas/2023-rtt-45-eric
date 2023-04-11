@@ -10,7 +10,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 
-import springexamples.database.dao.UserDAO;
+import springexamples.database.dao.EmployeeDAO;
+import springexamples.database.entity.Employee;
 import springexamples.database.entity.User;
 
 @Slf4j
@@ -19,7 +20,7 @@ public class EmailUniqueImpl implements ConstraintValidator<EmailUnique, String>
     public static final Logger LOG = LoggerFactory.getLogger(EmailUniqueImpl.class);
 
     @Autowired
-    private UserDAO userDAO;
+    private EmployeeDAO employeeDAO;
 
     @Override
     public void initialize(EmailUnique constraintAnnotation) {
@@ -43,7 +44,7 @@ public class EmailUniqueImpl implements ConstraintValidator<EmailUnique, String>
 
     public boolean existsExample2(String value) {
         // in this method we have used a spring data jpa function to see if the email exists
-        boolean exists = userDAO.existsByEmail(value);
+        boolean exists = employeeDAO.existsByEmail(value);
         return !exists;
     }
 
@@ -51,11 +52,11 @@ public class EmailUniqueImpl implements ConstraintValidator<EmailUnique, String>
         // if a record returns it means they exist in the database
         // if null then the user does not exist
 
-        User user = userDAO.findByEmail(value);
+        Employee employee = employeeDAO.findByEmail(value);
 
         // if the result is true then the validation passes
         // so if the user returned from the query is null then we pass the validation
-        return (user == null);
+        return (employee == null);
     }
 
 }
