@@ -12,6 +12,7 @@ import springexamples.database.dao.UserRoleDAO;
 import springexamples.database.entity.User;
 import springexamples.database.entity.UserRole;
 import springexamples.formbeans.CreateUserFormBean;
+import springexamples.security.AuthenticatedUserService;
 
 @Slf4j
 @Controller
@@ -25,6 +26,9 @@ public class SlashController {
 
     @Autowired
     private PasswordEncoder passwordEncoder;
+
+    @Autowired
+    private AuthenticatedUserService authenticatedUserService;
 
 
     @RequestMapping(value = { "/index", "/", "/index.html" }, method = RequestMethod.GET)
@@ -82,6 +86,10 @@ public class SlashController {
         userRole.setUserId(user.getId());
 
         userRoleDao.save(userRole);
+
+        // very important that this line of code is after both the user and the user role is saved to the database
+        // authenticate the user that was just created
+        authenticatedUserService.changeLoggedInUsername(form.getEmail(), form.getPassword());
 
         log.debug(form.toString());
 
