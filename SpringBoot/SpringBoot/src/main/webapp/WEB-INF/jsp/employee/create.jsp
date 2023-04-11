@@ -21,6 +21,12 @@
         <div class="row justify-content-center">
             <div class="col-sm-10 col-md-7 col-xl-5">
                 <form action="/employee/createSubmit" method="POST">
+                    <c:if test="${success}">
+                        <div class="alert alert-success" role="alert">
+                            Employee Created
+                        </div>
+                    </c:if>
+
                     <input type="hidden" name="id" value="${form.id}"/>
                     <div class="mb-4">
                         <label for="exampleInputEmail1" class="form-label">Email address</label>

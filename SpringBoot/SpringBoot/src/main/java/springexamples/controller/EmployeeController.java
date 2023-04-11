@@ -105,6 +105,8 @@ public class EmployeeController {
             return response;
         }
 
+        // if we get this far it means there were no errors in the incoming data
+
         log.debug("!!!!!!!!!!!!!!! In employee controller - create submit employee");
         log.debug(form.toString());
 
@@ -137,6 +139,12 @@ public class EmployeeController {
         // now we add the populated form back to the model so when page can display itself again
         response.addObject("form", form);
 
+        // now we add a boolean to the model so we can add a success message on the page
+        response.addObject("success", true);
+        
+        // set the ID of the employee on the form bean so it triggers the page to be an edit
+        // this is just to be nice to put the page into edit mode because if the ID is present in the form its considered an edit.
+        form.setId(emp.getId());
 
         // instead of processing a JSP view we can also redirect to another page
         // response.setViewName("redirect:/employee/edit/" + emp.getId());
