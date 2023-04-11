@@ -60,7 +60,7 @@ public class SlashController {
     }
 
     @PostMapping("/signup")
-    public ModelAndView setup(CreateUserFormBean form) {
+    public ModelAndView setup(CreateUserFormBean form, HttpSession session) {
 
         ModelAndView response = new ModelAndView("signup");
         log.debug("In the signup controller post method");
@@ -89,7 +89,7 @@ public class SlashController {
 
         // very important that this line of code is after both the user and the user role is saved to the database
         // authenticate the user that was just created
-        authenticatedUserService.changeLoggedInUsername(form.getEmail(), form.getPassword());
+        authenticatedUserService.changeLoggedInUsername(session, form.getEmail(), form.getPassword());
 
         log.debug(form.toString());
 

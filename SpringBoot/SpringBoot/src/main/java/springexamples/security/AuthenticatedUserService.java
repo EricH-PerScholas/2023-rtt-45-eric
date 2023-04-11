@@ -1,11 +1,13 @@
 package springexamples.security;
 
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.web.context.HttpSessionSecurityContextRepository;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -22,11 +24,13 @@ public class AuthenticatedUserService {
     private AuthenticationManager authenticationManager;
 
     // this method will authenticate a user as if they had logged in through the login page.
-    public void changeLoggedInUsername(String username, String unencryptedPassword) {
+    public void changeLoggedInUsername(HttpSession session, String username, String unencryptedPassword) {
         // reset security principal to be the new user information
         Authentication request = new UsernamePasswordAuthenticationToken(username, unencryptedPassword);
         Authentication result = authenticationManager.authenticate(request);
-        SecurityContextHolder.getContext().setAuthentication(result);
+        SecurityContext sc = SecurityContextHolder.getContext();
+        sc.setAuthentication(result);
+        session.setAttribute(HttpSessionSecurityContextRepository.SPRING_SECURITY_CONTEXT_KEY, sc);
     }
 
     public User loadCurrentUser() {
