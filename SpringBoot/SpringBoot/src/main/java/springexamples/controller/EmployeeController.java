@@ -171,6 +171,11 @@ public class EmployeeController {
             employees.stream().forEach( emp -> {
                 log.debug(emp.toString());
             });
+
+            // print the employee first names uppercase
+            employees.stream().forEach( emp -> {
+                log.debug(emp.get("firstName").toString().toUpperCase());
+            });
         }
 
         // check if both firstName and lastName have a value
