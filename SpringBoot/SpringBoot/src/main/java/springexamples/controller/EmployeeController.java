@@ -203,3 +203,26 @@ public class EmployeeController {
     }
 
 }
+
+
+// 1) The order table must have a status column that is a string and can be one of the following values : "cart", "completed"
+// 3) Have an order controller that requires the person to be authenticated before they can add items to the cart
+// 2) When the user clicks on an item to add to the cart it should add the item to the cart and redirect to the cart page
+// 4) The cart page should display the items in the cart and the total price of the items in the cart
+// 5) the add item to a cart controller method must require authentication
+// 6) The cart page should have a button to checkout.   Once the order has been checked out , then update the status on the order table to completed
+// 7) At any time there should be only 1 order in cart status for any given user, all other orders should be in completed statsu
+// 8) When the user adds and item to the cart, if an order in "cart" status already exists then query that order and use that order id in the order products table
+// 9) Otherwise create a new order and put it in cart status.  Then add the order id to the order products table
+// 10) The controller method for add item to cart does not have its own view .. it is more of a business logic method for adding an item ot the car and then redirects to the show cart page
+// 11) The show cart page is a view that displays the items in the cart and the total price of the items in the cart
+// 12) The show cart page also requries that the user be authenticated.
+
+/////
+
+// 1) incoming argument to controller is the product_id
+// 2) get the logged in user from the authenticated user service
+// 3) query for an order where status = "cart" and user_id = "logged in user id"
+// 4) if not found create a new order with status = "cart" and save
+// 5) use the product_id and the order id to create query for the order product
+// 6) if it exists then increment the quantity by 1 otherwise create it with quantity = 1
