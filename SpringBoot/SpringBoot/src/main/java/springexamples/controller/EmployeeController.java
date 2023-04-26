@@ -166,6 +166,11 @@ public class EmployeeController {
             List<Map<String,Object>> employees = employeeDao.findAllWithOfficeName();
             response.addObject("employeesList", employees);
 
+
+            // stream the list of employees and print them out
+            employees.stream().forEach( emp -> {
+                log.debug(emp.toString());
+            });
         }
 
         // check if both firstName and lastName have a value
